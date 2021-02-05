@@ -6,9 +6,10 @@ def div(num1, num2):
     return num1/num2
 
 number = list()
+words = ['делимое', 'делитель']
 i = 0
 while i < 2:
-    enter = input('Введите число - ')
+    enter = input(f'Введите {words[i]} - ')
     try:
         number.append(float(enter))
         i += 1
