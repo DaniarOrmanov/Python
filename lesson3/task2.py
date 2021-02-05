@@ -4,6 +4,22 @@
 # как именованные аргументы. Реализовать вывод данных о пользователе
 # одной строкой.
 
-def person(name, surname, year, city, email, phone):
-    print(result)
+def person(i):
+    """Функция принимает картеж КЛЮЧ-ЗНАЧЕНИЕ и объединяет его элементы
+    в строку с соответствующими разделителями"""
+    if i[0] != 'Номер телефона':
+        part = ': '.join(i)
+        return part + ', '
+    else:
+        part = ': '.join(i)
+        return part + '. '
 
+result = ''
+data = {'Имя': '', 'Фамилия': '', 'Год рождения': '', 'Город проживания': '', 'E-mail': '', 'Номер телефона': ''}
+
+for word in data.keys():
+    data[word] = input(f'Введите значение параметра "{word}" - ')
+
+for i in data.items():
+    result = result + person(i)
+print(f'Данные пользователя - {result}')
