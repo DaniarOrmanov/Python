@@ -5,8 +5,10 @@
 # одной строкой.
 
 def person(i):
+
     """Функция принимает картеж КЛЮЧ-ЗНАЧЕНИЕ и объединяет его элементы
     в строку с соответствующими разделителями"""
+
     if i[0] != 'Номер телефона':
         part = ': '.join(i)
         return part + ', '
@@ -22,4 +24,5 @@ for word in data.keys():
 
 for i in data.items():
     result = result + person(i)
+
 print(f'Данные пользователя - {result}')
