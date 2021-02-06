@@ -6,40 +6,48 @@
 # Первый — возведение в степень с помощью оператора **. Второй — более
 # сложная реализация без оператора **, предусматривающая использование цикла.
 
+def my_func1(x, y):
+    result = base ** exp
+    return result
+
+def my_func2(x, y):
+    i = 0
+    result = base
+    while i < abs(y) - 1:
+        result = result * base
+        i += 1
+    result = 1/result
+    return result
+
 words = ['действительное положительное', 'целое отрицательное']
 
 i = 0
 while i < 2:
-    enter = input(f'Введите "q" для выхода или введите {words[i]} число: ')
-    if i == 0:
-        try:
-            float(enter) > 0
+    enter = input(f'Введите {words[i]} число: ')
+    try:
+        float(enter)
+        good = 1
+    except ValueError:
+        good = 0
+    if i == 0 and good == 1:
+        if float(enter) > 0:
             base = float(enter)
             i += 1
-        except ValueError:
-            if enter.lower() == 'q':
-                quit()
-            break
-    elif i == 1:
-        try:
-            int(enter) < 0
-            exp = int(enter)
+        else:
+            print('Вы ввели не то, что надо. Для выхода можете ввести "q" или снова')
+    elif i == 1 and good == 1:
+        if float(enter) == float(enter) // 1 and float(enter) < 0:
+            exp = float(enter)
             i += 1
-        except ValueError:
-            if enter.lower() == 'q':
-                quit()
-            break
+        else:
+            print('Вы ввели не то, что надо. Для выхода можете ввести "q" или снова')
+    elif good == 0:
+        if enter.lower() == 'q':
+            quit()
+        else:
+            print('Вы ввели не то, что надо. Для выхода можете ввести "q" или снова')
 
-
-    def my_func(x, y):
-
-
-numbers = list()
-
-
-i = 0
-while i < 2:
-    number[i] = enter()
-    result = my_func(numbers[0], numbers[1], numbers[2])
-
-    print(f'Сумма двух наибольших чисел равна {result:.3f}.')
+result1 = my_func1(base, exp)
+result2 = my_func2(base, exp)
+print(f'\nРезультаты возведения числа {base} в степень {exp}:')
+print(f'Первая функция: {result1}\nВторая функция: {result2}')
