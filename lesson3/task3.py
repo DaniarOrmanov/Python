@@ -29,7 +29,7 @@ def my_func(a, b, c):
     """
     massiv = [a, b, c]
     massiv.sort()
-    sum_max = massiv[1] + massiv[2]
+    sum_max = massiv[-2] + massiv[-1]
     return sum_max
 
 numbers = list()
