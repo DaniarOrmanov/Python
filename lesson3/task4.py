@@ -37,7 +37,7 @@ while i < 2:
             print('Вы ввели не то, что надо. Для выхода можете ввести "q" или снова')
     elif i == 1 and good == 1:
         if float(enter) == float(enter) // 1 and float(enter) < 0:
-            exp = float(enter)
+            exp = int(enter)
             i += 1
         else:
             print('Вы ввели не то, что надо. Для выхода можете ввести "q" или снова')
