@@ -21,7 +21,6 @@ data = {'Имя': '', 'Фамилия': '', 'Год рождения': '', 'Го
 
 for word in data.keys():
     data[word] = input(f'Введите значение параметра "{word}" - ')
-
 for i in data.items():
     result = result + person(i)
 print(f'Данные пользователя - {result}')

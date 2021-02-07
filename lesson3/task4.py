@@ -49,6 +49,5 @@ while i < 2:
 
 result1 = my_func1(base, exp)
 result2 = my_func2(base, exp)
-
 print(f'\nРезультаты возведения числа {base} в степень {exp}:')
 print(f'Первая функция: {result1}\nВторая функция: {result2}')

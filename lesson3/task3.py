@@ -36,5 +36,4 @@ numbers = list()
 words = ['первый', 'второй', 'третий']
 numbers = enter()
 result = my_func(numbers[0], numbers[1], numbers[2])
-
 print(f'Сумма двух наибольших чисел равна {result:.3f}.')
