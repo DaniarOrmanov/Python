@@ -24,5 +24,4 @@ for word in data.keys():
 
 for i in data.items():
     result = result + person(i)
-
 print(f'Данные пользователя - {result}')

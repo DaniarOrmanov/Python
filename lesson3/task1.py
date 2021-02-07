@@ -23,3 +23,4 @@ if number[1] == 0:
 else:
     result = div(number[0], number[1])
     print(f'Если разделить {number[0]} на {number[1]} - получится {result:.3f}.')
+
