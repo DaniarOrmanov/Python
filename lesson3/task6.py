@@ -35,6 +35,7 @@ latin = 'abcdifghijklmnopqrstuvwxyz'
 str = input('\nВведите одно или несколько слов в нижнем регистре'
             ' латиницей, отделяя их пробелами, и нажмите Enter: ')
 list = str.split(' ')
+
 i = 0
 while i < len(list):
     word = list[i]
