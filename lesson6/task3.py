@@ -11,22 +11,29 @@
 # проверить значения атрибутов, вызвать методы экземпляров).
 
 class Worker:
-    def __init__(self, name):
+    def __init__(self, name, surname, position, income):
         self.name = name
-        # self.surname = 'Ormanov'
-        # self.position = 'Design Engineer'
-        # self._income = {"wage": 65000, "bonus": 20000}
+        self.surname = surname
+        self.position = position
+        self._income = income
 
 class Position(Worker):
 
-    def __init__(self, name):
-        Worker.__init__(self, name)
+    def __init__(self, name, surname, position, income):
+        Worker.__init__(self, name, surname, position, income)
 
     def get_full_name(self):
-        self.name = Position.name
+        return self.name + ' ' + self.surname + ', ' + self.position
 
     def get_total_income(self):
-        pass
+        salary = self._income.get('wage') + self._income.get('bonus')
+        return f'Доход с учетом премии составляет {salary}.'
 
-worker1 = Position('Daniar')
-worker1.get_full_name()
+
+emp1 = Position('Daniar', 'Ormanov', 'Design Engineer', {"wage": 65000, "bonus": 20000})
+print(f'\n{emp1.get_full_name()}')
+print(emp1.get_total_income())
+
+emp2 = Position('Ivan', 'Petrov', 'Artist', {"wage": 55000, "bonus": 32000})
+print(f'\n{emp2.get_full_name()}')
+print(emp2.get_total_income())
