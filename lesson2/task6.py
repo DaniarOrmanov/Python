@@ -33,27 +33,26 @@ else:
         print(f'Надо ввести натуральное число.')
 
 catalog = list()
-dict_data = {'название': '', 'цена': 0, 'количество': 0, 'ед.': ''}
-stat = dict_data
+dict_data = {'название': None, 'цена': None, 'количество': None, 'ед.': None}
+stat = dict_data                              # пустой словарь для вывода данных
+stat_data = [[], [], [], []]
 i = 0
 while i < quantity:
     dict_data['название'] = input(f'Введите название {i + 1}-го товара: ')
+    stat_data[0].append(dict_data['название'])
     dict_data['цена'] = input(f'Введите цену товара "{dict["название"]}": ')
+    stat_data[1].append(dict_data['цена'])
     dict_data['количество'] = input(f'Введите количество товара "{dict["название"]}": ')
+    stat_data[2].append(dict_data['количество'])
     dict_data['ед.'] = input(f'Введите единицы измерения товара "{dict["название"]}": ')
+    stat_data[3].append(dict_data['ед.'])
     product = (i + 1, dict_data)
     catalog.append(product)
     i += 1
 
-stat_name = list()
-stat_cost = list()
-stat_quant = list()
-stat_unit = list()
+i = 0
+for key in stat:
+    stat[key] = stat_data[i]
+    i += 1
 
-for i in catalog:
-    for key, volue in i[1].items():
-        stat_name.append(dict_data[key])
-        # stat_cost.append(key['цена'])
-        # stat_name.append(key['количество'])
-        # stat_unit.append(key['ед.'])
-print(dict_data['название'])
+print(stat.items())
