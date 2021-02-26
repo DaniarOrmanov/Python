@@ -13,3 +13,29 @@
 # только если введено число. Класс-исключение должен не позволить
 # пользователю ввести текст (не число) и отобразить соответствующее
 # сообщение. При этом работа скрипта не должна завершаться.
+
+class Exc:
+
+    @staticmethod
+    def numbers_only(el):
+        try:
+            float(el)
+        except ValueError:
+            if el == 'stop':
+                print(f'Список данных такой: {data_list}.')
+                quit()
+            else:
+                print('Вы ввели не число!')
+        else:
+            data_list.append(float(el))
+            print(f'Число {float(el)} добавлено в список.')
+
+
+data_list = list()
+while True:
+    element = input('Введите число: ')
+    Exc.numbers_only(element)
+
+
+
+
