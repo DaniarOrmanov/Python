@@ -11,18 +11,24 @@ class Complex:
         self.reim = reim
 
     def __add__(self, other):
-        return self.reim[0] + other.reim[0], self.reim[1] + other.reim[1]
+        result = self.reim[0] + other.reim[0], self.reim[1] + other.reim[1]
+        return Complex(result)
 
     def __mul__(self, other):
-        pass
+        result = self.reim[0] * other.reim[0] - self.reim[1] * other.reim[1], self.reim[0] * other.reim[1] + self.reim[1] * other.reim[0]
+        return Complex(result)
 
     def print(self):
-        print(self.reim)
+        if self.reim[1] > 0:
+            print(str(self.reim[0]) + '+' + str(self.reim[1]) + 'j')
+        else:
+            print(str(self.reim[0]) + '' + str(self.reim[1]) + 'j')
 
 
 number1 = Complex((1, 2))
-number2 = Complex((3, -3))
-# a = number1 + number2
-# Complex.print(a)
-Complex.print(number1)
+number2 = Complex((-3, 2))
+
+print('Сумма комплексных чисел:')
 Complex.print(number1 + number2)
+print('\nПроизведение комплексных чисел:')
+Complex.print(number1 * number2)
